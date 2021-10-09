@@ -6,7 +6,6 @@
   display:  flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 2em 1em 0em;
 
     .left{
       display:  flex;
@@ -15,9 +14,9 @@
     }
   .menu{
     order: 1;
-    cursor: pointer;
     position: relative;
     transition: 0.3s ease-in-out;
+
     @keyframes width {
       from { width: 0;}
       to {width: 70vw;}
@@ -32,50 +31,65 @@
       from { opacity: 0;}
       to {opacity: 1;}
     }
-    &::after{
-      position: absolute;
-      content: '';
-      background: $White;
-      height: 100vh;
-      top:-33px;
-      left: 0;
-      z-index:0;
-      animation: width;
-      animation-duration: 0.5s;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: forwards;
-
-    }
-
-    &::before{
-      content: "";
-      background: $Black;
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
-      top: -33px;
-      animation: opacity;
-      animation-duration: 0.5s;
-      animation-timing-function: ease-in;
-      animation-fill-mode: forwards;
-    }
 
     &__links{
-      padding: 1em;
       position: absolute;
-      display: flex;
       flex-direction: column;
-      z-index: 1;
       animation: textOpacity;
       animation-duration: 0.5s;
       animation-timing-function: ease-in;
       animation-fill-mode: forwards;
+      padding: 0em 1em;
+
       a{
+        cursor: pointer;
         text-decoration: none;
         color: $Black;
         font-weight: $bold;
-        padding-top: 20px;
+        padding: 0.5em 0;
+        z-index: 1;
       }
+
+      img{
+        cursor: pointer;
+        width: 25px;
+        height: auto;
+        z-index: 1;
+        margin-bottom: 3em;
+      }
+
+      &::after{
+        position: absolute;
+        cursor: auto;
+        content: '';
+        background: $White;
+        top:-37px;
+        left: 0;
+        min-height: 100vh;
+        z-index:0;
+        animation: width;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+  
+      }
+  
+      &::before{
+        position: absolute;
+        content: "";
+        background: $Black;
+        width: 100vw;
+        top:-37px;
+        min-height: 100vh;
+        left: 0%;
+        translate: transform(-50%, 50%);
+        height: 100%;
+        animation: opacity;
+        animation-duration: 0.3s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+      }
+  
 
     }
   }
