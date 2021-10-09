@@ -1,6 +1,5 @@
 @import 'globals';
-
-
+@import 'animations';
 
 .header{
   display:  flex;
@@ -11,32 +10,38 @@
       display:  flex;
       justify-content: center;
       align-items: center;
+      padding: 1em;
     }
   .menu{
-    order: 1;
     position: relative;
-    transition: 0.3s ease-in-out;
-
-    @keyframes width {
-      from { width: 0;}
-      to {width: 70vw;}
-    }
-
-    @keyframes opacity{
-      from { opacity: 0;}
-      to {opacity: 0.5;}
-    }
-
-    @keyframes textOpacity{
-      from { opacity: 0;}
-      to {opacity: 1;}
+    order: 1;
+    #reversed{
+      a,img{
+      animation: ReverseTextOpacity;
+      animation-duration: 0.3s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      }
+      &::after{
+      animation: ReverseWidth;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      }
+    
+      &::before{
+      animation: ReverseOpacity;
+      animation-duration: 0.2s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+      }
     }
 
     &__links{
       position: absolute;
       flex-direction: column;
       animation: textOpacity;
-      animation-duration: 0.5s;
+      animation-duration: 0.3s;
       animation-timing-function: ease-in;
       animation-fill-mode: forwards;
       padding: 0em 1em;
@@ -63,8 +68,8 @@
         cursor: auto;
         content: '';
         background: $White;
-        top:-37px;
-        left: 0;
+        top:-51px;
+        left: -16px;
         min-height: 100vh;
         z-index:0;
         animation: width;
@@ -79,9 +84,9 @@
         content: "";
         background: $Black;
         width: 100vw;
-        top:-37px;
+        top:-51px;
         min-height: 100vh;
-        left: 0%;
+        left: -16px;
         translate: transform(-50%, 50%);
         height: 100%;
         animation: opacity;
@@ -96,11 +101,16 @@
 
   &__logo{ 
     order: 2;
+    margin-left: 1em;
   }
 
   &__icons{
     order: 3;
+    display:flex;
+    align-items: center;
+    padding: 1em;
     #avatar{
+      margin-left: 1em;
       width: auto;
       height: 50px;
     }

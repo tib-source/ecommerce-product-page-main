@@ -13,39 +13,6 @@ body {
   background: #ff7d1a;
 }
 
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header .left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header .menu {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  position: relative;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
 @-webkit-keyframes width {
   from {
     width: 0;
@@ -100,6 +67,125 @@ body {
   }
 }
 
+@-webkit-keyframes ReverseWidth {
+  from {
+    width: 70vw;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes ReverseWidth {
+  from {
+    width: 70vw;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes ReverseOpacity {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ReverseOpacity {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes ReverseTextOpacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ReverseTextOpacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
+}
+
+.header .menu {
+  position: relative;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.header .menu #reversed a, .header .menu #reversed img {
+  -webkit-animation: ReverseTextOpacity;
+          animation: ReverseTextOpacity;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.header .menu #reversed::after {
+  -webkit-animation: ReverseWidth;
+          animation: ReverseWidth;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.header .menu #reversed::before {
+  -webkit-animation: ReverseOpacity;
+          animation: ReverseOpacity;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 .header .menu__links {
   position: absolute;
   -webkit-box-orient: vertical;
@@ -108,8 +194,8 @@ body {
           flex-direction: column;
   -webkit-animation: textOpacity;
           animation: textOpacity;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
   -webkit-animation-timing-function: ease-in;
           animation-timing-function: ease-in;
   -webkit-animation-fill-mode: forwards;
@@ -139,8 +225,8 @@ body {
   cursor: auto;
   content: '';
   background: white;
-  top: -37px;
-  left: 0;
+  top: -51px;
+  left: -16px;
   min-height: 100vh;
   z-index: 0;
   -webkit-animation: width;
@@ -158,9 +244,9 @@ body {
   content: "";
   background: black;
   width: 100vw;
-  top: -37px;
+  top: -51px;
   min-height: 100vh;
-  left: 0%;
+  left: -16px;
   translate: transform(-50%, 50%);
   height: 100%;
   -webkit-animation: opacity;
@@ -177,15 +263,24 @@ body {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  margin-left: 1em;
 }
 
 .header__icons {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1em;
 }
 
 .header__icons #avatar {
+  margin-left: 1em;
   width: auto;
   height: 50px;
 }

@@ -5,15 +5,23 @@ menuItems.style.display = "none"
 
 
 menuIcon.addEventListener('click', () => {
-  curr = menuItems.style.display = "none"
+  curr = menuItems.style.display
   if (curr == 'none') {
     return menuItems.style.display = 'flex'
   }
 })
 closeIcon.addEventListener('click', () => {
-  curr = menuItems.style.display = "none"
+  curr = menuItems.style.display
   if (curr == 'flex') {
-    return menuItems.style.display = 'none'
+    menuItems.id = 'reversed'
+    setTimeout(() => {
+      menuItems.style.display = 'none'
+      menuItems.id = ''
+      return null
+    }, 300)
+
+
+    console.log("hello")
   }
 })
 
