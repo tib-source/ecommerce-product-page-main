@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="./app/scss/style.css">
+  <title>E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -16,11 +16,27 @@
 </head>
 <body>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+  <header class="header">
+    <div class="left">
+      <div class="header__logo">
+        <img src="./images/logo.svg" alt="logo that says sneakers">
+      </div>
+      <div class="menu">
+        <img src="./images/icon-menu.svg" alt="">
+        <div class="menu__links">
+          <a href="#" class="menu__link">Collections</a>
+          <a href="#" class="menu__link">Men</a>
+          <a href="#" class="menu__link">Women</a>
+          <a href="#" class="menu__link">About</a>
+          <a href="#" class="menu__link">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class='header__icons'>
+      <img src="./images/icon-cart.svg" alt="" srcset="">
+      <img id='avatar' src="./images/image-avatar.png" alt="" srcset="">
+    </div>
+  </header>
 
   Sneaker Company
 
@@ -38,7 +54,8 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">tib-source</a>.
   </div>
+  <script  src='./app/js/index.js'></script>
 </body>
 </html>
