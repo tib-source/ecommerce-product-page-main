@@ -1,121 +1,29 @@
 @import 'globals';
 @import 'animations';
+@import 'header';
 
-.header{
-  display:  flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: $White;
+
+
+.content{
   width: 100%;
-  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: red;
+  min-height: 100vh;
 
-    .left{
-      display:  flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1em;
-    }
-  .menu{
-    position: relative;
-    order: 1;
-    #reversed{
-      a,img{
-      animation: ReverseTextOpacity;
-      animation-duration: 0.3s;
-      animation-timing-function: ease-out;
-      animation-fill-mode: forwards;
-      }
-      &::after{
-      animation: ReverseWidth;
-      animation-duration: 0.2s;
-      animation-timing-function: ease-in;
-      animation-fill-mode: forwards;
-      }
-    
-      &::before{
-      animation: ReverseOpacity;
-      animation-duration: 0.2s;
-      animation-timing-function: ease-in;
-      animation-fill-mode: forwards;
-      }
-    }
+  .images{
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
 
-    &__links{
-      position: absolute;
-      flex-direction: column;
-      animation: textOpacity;
-      animation-duration: 0.3s;
-      animation-timing-function: ease-in;
-      animation-fill-mode: forwards;
-      padding: 0em 1em;
-
-      a{
-        cursor: pointer;
-        text-decoration: none;
-        color: $Black;
-        font-weight: $bold;
-        padding: 0.5em 0;
-        z-index: 1;
-      }
-
+    .carousel{
+      display: flex;
       img{
-        cursor: pointer;
-        width: 25px;
-        height: auto;
-        z-index: 1;
-        margin-bottom: 3em;
+        width: auto;
+        height: 520px;
+        transition: 0.4s ease-in-out;
       }
-
-      &::after{
-        position: absolute;
-        cursor: auto;
-        content: '';
-        background: $White;
-        top:-51px;
-        left: -16px;
-        min-height: 100vh;
-        z-index:0;
-        animation: width;
-        animation-duration: 0.3s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-  
-      }
-  
-      &::before{
-        position: absolute;
-        content: "";
-        background: $Black;
-        width: 100vw;
-        top:-51px;
-        min-height: 100vh;
-        left: -16px;
-        translate: transform(-50%, 50%);
-        height: 100%;
-        animation: opacity;
-        animation-duration: 0.3s;
-        animation-timing-function: ease-in;
-        animation-fill-mode: forwards;
-      }
-  
-
-    }
-  }
-
-  &__logo{ 
-    order: 2;
-    margin-left: 1em;
-  }
-
-  &__icons{
-    order: 3;
-    display:flex;
-    align-items: center;
-    padding: 1em;
-    #avatar{
-      margin-left: 1em;
-      width: auto;
-      height: 50px;
     }
   }
 

@@ -287,4 +287,37 @@ body {
   width: auto;
   height: 50px;
 }
+
+.content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: red;
+  min-height: 100vh;
+}
+
+.content .images {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.content .images .carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content .images .carousel img {
+  width: auto;
+  height: 520px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
 /*# sourceMappingURL=style.css.map */

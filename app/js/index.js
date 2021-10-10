@@ -26,3 +26,20 @@ closeIcon.addEventListener('click', () => {
 })
 
 
+let cLeft = document.getElementById('left')
+let cRight = document.getElementById('right')
+let images = document.querySelector('.carousel')
+let slider = 0
+
+
+cLeft.addEventListener('click', () => {
+  let current = (slider * 100)
+  if (slider >= 3) {
+    slider = 0
+  } else {
+    slider++
+  }
+  console.log(images)
+  images.style.transform = `translateX(-${current}%)`
+  console.log(images.style.transform, current)
+})
