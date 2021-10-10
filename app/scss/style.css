@@ -10,7 +10,6 @@ body {
   overflow: hidden;
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 16;
-  background: #ff7d1a;
 }
 
 @-webkit-keyframes width {
@@ -298,26 +297,91 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: red;
   min-height: 100vh;
 }
 
 .content .images {
   width: 100%;
-  height: 500px;
+  height: 400px;
   overflow: hidden;
+}
+
+.content .images #left {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+
+.content .images #right {
+  position: absolute;
+  top: 50%;
+  left: 10%;
 }
 
 .content .images .carousel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  height: 100%;
 }
 
 .content .images .carousel img {
   width: auto;
-  height: 520px;
+  height: 100%;
   -webkit-transition: 0.4s ease-in-out;
   transition: 0.4s ease-in-out;
+}
+
+.content .product {
+  padding: 1em 1.3em;
+}
+
+.content .product .company {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #ff7d1a;
+}
+
+.content .product .title {
+  font-weight: 700;
+}
+
+.content .product .description {
+  font-size: 16px;
+}
+
+.content .product .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .product .price .current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .product .price .current .discount {
+  color: #ff7d1a;
+  font-weight: 700;
+  background-color: #ffede0;
+  padding: 0.2em 0.3em;
+  margin: 1em;
 }
 /*# sourceMappingURL=style.css.map */
