@@ -35,13 +35,17 @@ let slider = 1;
 let size = images[0].clientWidth;
 
 
+
 cRight.addEventListener('click', () => {
+  if (slider >= (images.length - 1)) return;
   carousel.style.transition = 'transform 0.4s ease-in-out';
   slider++
   carousel.style.transform = `translateX(${-size * slider}px)`;
+
 })
 
 cLeft.addEventListener('click', () => {
+  if (slider <= 0) return;
   carousel.style.transition = 'transform 0.4s ease-in-out';
   slider--
   carousel.style.transform = `translateX(${-size * slider}px)`;
