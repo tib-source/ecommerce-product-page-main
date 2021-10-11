@@ -317,47 +317,12 @@ body, html {
   }
 }
 
-.content .images {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.content .images #left {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-}
-
-.content .images #right {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-}
-
 .content .images .carousel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  height: 100%;
-}
-
-.content .images .carousel img {
-  width: auto;
-  height: 100%;
-  -webkit-transition: 0.4s ease-in-out;
-  transition: 0.4s ease-in-out;
-  border-radius: 1em;
-}
-
-@media (min-width: 800px) {
-  .content .images .carousel img {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
-    width: auto;
-    height: 100%;
-  }
+  width: 100%;
+  height: 500px;
 }
 
 .content .product {
