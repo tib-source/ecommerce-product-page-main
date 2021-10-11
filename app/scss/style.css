@@ -317,6 +317,10 @@ body, html {
   }
 }
 
+.content .images {
+  overflow: hidden;
+}
+
 .content .images .carousel {
   display: -webkit-box;
   display: -ms-flexbox;

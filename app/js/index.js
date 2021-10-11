@@ -28,18 +28,29 @@ closeIcon.addEventListener('click', () => {
 
 let cLeft = document.getElementById('left')
 let cRight = document.getElementById('right')
-let images = document.querySelector('.carousel')
-let slider = 0
+let carousel = document.querySelector('.carousel')
+let images = document.querySelectorAll('.carousel img')
 
+let slider = 1;
+let size = images[0].clientWidth;
+
+
+cRight.addEventListener('click', () => {
+  carousel.style.transition = 'transform 0.4s ease-in-out';
+  slider++
+  carousel.style.transform = `translateX(${-size * slider}px)`;
+})
 
 cLeft.addEventListener('click', () => {
-  let current = (slider * 100)
-  if (slider >= 3) {
-    slider = 0
-  } else {
-    slider++
+  carousel.style.transition = 'transform 0.4s ease-in-out';
+  slider--
+  carousel.style.transform = `translateX(${-size * slider}px)`;
+})
+
+
+carousel.addEventListener('transitionend', () => {
+  if (images[slider].id === 'lastClone') {
+    carousel.style.transition = 'none';
+    slider = images.length - 2
   }
-  console.log(images)
-  images.style.transform = `translateX(-${current}%)`
-  console.log(images.style.transform, current)
 })
