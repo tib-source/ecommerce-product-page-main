@@ -33,6 +33,7 @@ let images = document.querySelectorAll('.carousel img')
 
 let slider = 1;
 let size = images[0].clientWidth;
+console.log(size)
 
 
 
@@ -49,12 +50,4 @@ cLeft.addEventListener('click', () => {
   carousel.style.transition = 'transform 0.4s ease-in-out';
   slider--
   carousel.style.transform = `translateX(${-size * slider}px)`;
-})
-
-
-carousel.addEventListener('transitionend', () => {
-  if (images[slider].id === 'lastClone') {
-    carousel.style.transition = 'none';
-    slider = images.length - 2
-  }
 })
