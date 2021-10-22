@@ -1,7 +1,7 @@
 const closeIcon = document.querySelector('#close')
 const menuIcon = document.querySelector('#menu')
 const menuItems = document.querySelector('#menuItems')
-menuItems.style.display = "none"
+// menuItems.style.display = "none"
 
 
 menuIcon.addEventListener('click', () => {
