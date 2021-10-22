@@ -34,24 +34,27 @@ let images = document.querySelector('.images')
 
 let slider = 0;
 let size = imageList[0].clientWidth
-console.log(size)
 let current = 0
+
+
 cLeft.addEventListener('click', () => {
+  if (slider <= 1) {
+    slider = 5
+  }
   slider--
   current = slider * size
   console.log(`slider : ${slider} \n size: ${size} \n current: ${current}`)
   images.style.transform = `translateX(-${current - size}px)`
-  if (slider <= 0) {
-    slider = 4
-  }
+
 })
 
 cRight.addEventListener('click', () => {
+  if (slider >= imageList.length) {
+    slider = 0
+  }
   slider++
   current = slider * size
   console.log(`slider : ${slider} \n size: ${size} \n current: ${current}`)
   images.style.transform = `translateX(-${current - size}px)`
-  if (slider >= imageList.length - 1) {
-    slider = 1
-  }
+
 })
