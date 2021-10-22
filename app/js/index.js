@@ -29,25 +29,29 @@ closeIcon.addEventListener('click', () => {
 let cLeft = document.getElementById('left')
 let cRight = document.getElementById('right')
 let carousel = document.querySelector('.carousel')
-let images = document.querySelectorAll('.carousel img')
+let imageList = document.querySelectorAll('.carousel img')
+let images = document.querySelector('.images')
 
-let slider = 1;
-let size = images[0].clientWidth;
+let slider = 0;
+let size = imageList[0].clientWidth
 console.log(size)
-
-
-
-cRight.addEventListener('click', () => {
-  if (slider >= (images.length - 1)) return;
-  carousel.style.transition = 'transform 0.4s ease-in-out';
-  slider++
-  carousel.style.transform = `translateX(${-size * slider}px)`;
-
+let current = 0
+cLeft.addEventListener('click', () => {
+  slider--
+  current = slider * size
+  console.log(`slider : ${slider} \n size: ${size} \n current: ${current}`)
+  images.style.transform = `translateX(-${current - size}px)`
+  if (slider <= 0) {
+    slider = 4
+  }
 })
 
-cLeft.addEventListener('click', () => {
-  if (slider <= 0) return;
-  carousel.style.transition = 'transform 0.4s ease-in-out';
-  slider--
-  carousel.style.transform = `translateX(${-size * slider}px)`;
+cRight.addEventListener('click', () => {
+  slider++
+  current = slider * size
+  console.log(`slider : ${slider} \n size: ${size} \n current: ${current}`)
+  images.style.transform = `translateX(-${current - size}px)`
+  if (slider >= imageList.length - 1) {
+    slider = 1
+  }
 })
