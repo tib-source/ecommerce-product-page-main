@@ -1,23 +1,28 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+node_modules/
+jspm_packages/
+build/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+### https://raw.github.com/github/gitignore/218a941be92679ce67d0484547e3e142b2f5f6f0/Global/VisualStudioCode.gitignore
 
-# testing
-/coverage
+.vscode/*
+!.vscode/settings.json
+#!.vscode/tasks.json
+#!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
-# production
-/build
+# Next.js build output
+.next
+out
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Next.js build output
+.next
+out
 
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
